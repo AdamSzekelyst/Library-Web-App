@@ -1,0 +1,166 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.card-header {
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+  padding: 1.8rem;
+  border: none;
+}
+
+.card-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 2rem;
+  color: white;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.detail-item i {
+  font-size: 1.5rem;
+  color: #2575fc;
+  margin-top: 0.5rem;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.detail-content label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.detail-content span {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.reservation-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.reservation-section h4 {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.date-picker-wrapper {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: white;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #2575fc;
+  box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #1d5bd8, #5b0fb1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 117, 252, 0.4);
+}
+
+.alert-danger {
+  background: linear-gradient(45deg, #ff4d4d, #f02929);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+}
+
+@media (max-width: 768px) {
+  .card-header {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .detail-item i {
+    font-size: 1.2rem;
+  }
+
+  .detail-content span {
+    font-size: 1.1rem;
+  }
+
+  .reservation-section {
+    padding: 1.5rem;
+  }
+}

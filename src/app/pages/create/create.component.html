@@ -1,0 +1,82 @@
+<section class="vh-100">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="text-center mb-0">Add New Book</h2>
+          </div>
+          <div class="card-body p-4">
+            <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+              <div class="form-group mb-4">
+                <label for="bookTitle" class="form-label">Book Title</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fas fa-book"></i></span>
+                  <input
+                    [(ngModel)]="title"
+                    type="text"
+                    id="bookTitle"
+                    class="form-control"
+                    name="title"
+                    required
+                    placeholder="Enter book title"
+                  />
+                </div>z
+                <div *ngIf="productForm.submitted && !productForm.controls['title']?.valid"
+                     class="error-message">
+                  Title is required
+                </div>
+              </div>
+
+              <div class="form-group mb-4">
+                <label for="bookAuthor" class="form-label">Author</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fas fa-user-pen"></i></span>
+                  <input
+                    [(ngModel)]="author"
+                    type="text"
+                    id="bookAuthor"
+                    class="form-control"
+                    name="author"
+                    required
+                    placeholder="Enter author name"
+                  />
+                </div>
+                <div *ngIf="productForm.submitted && !productForm.controls['author']?.valid"
+                     class="error-message">
+                  Author is required
+                </div>
+              </div>
+
+              <div class="form-group mb-4">
+                <label for="bookCategory" class="form-label">Category</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fas fa-bookmark"></i></span>
+                  <input
+                    [(ngModel)]="category"
+                    type="text"
+                    id="bookCategory"
+                    class="form-control"
+                    name="category"
+                    required
+                    placeholder="Enter book category"
+                  />
+                </div>
+                <div *ngIf="productForm.submitted && !productForm.controls['category']?.valid"
+                     class="error-message">
+                  Category is required
+                </div>
+              </div>
+
+              <div class="d-grid">
+                <button class="btn btn-primary btn-lg" type="submit">
+                  <i class="fas fa-plus-circle me-2"></i>Add Book
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,85 @@
+.card {
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.card-header {
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+  padding: 1.8rem;
+  border: none;
+}
+
+.card-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.reservation-table {
+  color: white;
+  margin-top: 1rem;
+}
+
+.reservation-table thead th {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.reservation-table tbody td {
+  border-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.status-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.status-badge.active {
+  background: rgba(46, 213, 115, 0.2);
+  color: #2ed573;
+}
+
+.status-badge.expired {
+  background: rgba(255, 71, 87, 0.2);
+  color: #ff4757;
+}
+
+.no-reservations {
+  text-align: center;
+  padding: 3rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.no-reservations i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.no-reservations p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .card-header {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+  }
+
+  .reservation-table {
+    font-size: 0.9rem;
+  }
+}

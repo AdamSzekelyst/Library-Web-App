@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2>Update Book</h2>
+    </div>
+    <div class="card-body">
+      <div *ngIf="loading" class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <div *ngIf="error" class="alert alert-danger">
+        {{ error }}
+      </div>
+
+      <form [formGroup]="bookForm" (ngSubmit)="onSubmit()" *ngIf="!loading">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            formControlName="title"
+            [class.is-invalid]="title?.invalid && title?.touched"
+          >
+          <div class="invalid-feedback" *ngIf="title?.invalid && title?.touched">
+            <div *ngIf="title?.errors?.['required']">Title is required</div>
+            <div *ngIf="title?.errors?.['minlength']">Title must be at least 2 characters</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="author" class="form-label">Author</label>
+          <input
+            type="text"
+            class="form-control"
+            id="author"
+            formControlName="author"
+            [class.is-invalid]="author?.invalid && author?.touched"
+          >
+          <div class="invalid-feedback" *ngIf="author?.invalid && author?.touched">
+            <div *ngIf="author?.errors?.['required']">Author is required</div>
+            <div *ngIf="author?.errors?.['minlength']">Author must be at least 2 characters</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <input
+            type="text"
+            class="form-control"
+            id="category"
+            formControlName="category"
+            [class.is-invalid]="category?.invalid && category?.touched"
+          >
+          <div class="invalid-feedback" *ngIf="category?.invalid && category?.touched">
+            <div *ngIf="category?.errors?.['required']">Category is required</div>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button
+            type="submit"
+            class="btn btn-primary me-2"
+            [disabled]="!bookForm.valid || loading"
+          >
+            <i class="fas fa-save me-2"></i>Update Book
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="onCancel()"
+            [disabled]="loading"
+          >
+            <i class="fas fa-times me-2"></i>Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

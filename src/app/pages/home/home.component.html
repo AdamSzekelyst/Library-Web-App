@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <div class="header-section mb-4 d-flex gap-3">
+    <button (click)="navigateToCreateProduct()" class="btn btn-primary btn-lg">
+      <i class="fas fa-plus-circle me-2"></i> Add New Book
+    </button>
+    <button
+      routerLink="/reservations"
+      class="btn btn-info btn-lg">
+      <i class="fas fa-list-check me-2"></i>
+      View Reservations
+    </button>
+  </div>
+
+  <div class="row g-4">
+    <div *ngFor="let book of books" class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }}</h5>
+          <p class="card-text"><i class="fas fa-user me-2"></i>{{ book.author }}</p>
+          <p class="card-text"><i class="fas fa-bookmark me-2"></i>{{ book.category }}</p>
+          <p class="card-text"><i class="fas fa-calendar me-2"></i>{{ book.loanedUntil }}</p>
+          <div class="d-flex justify-content-between">
+            <button (click)="navigateToProductPage(book._id)" class="btn btn-warning">
+              <i class="fas fa-eye me-2"></i>View Details
+            </button>
+            <button (click)="updateBook(book)" class="btn btn-info">
+              <i class="fas fa-edit me-2"></i>Update
+            </button>
+            <button (click)="deleteBook(book._id)" class="btn btn-danger">
+              <i class="fas fa-trash me-2"></i>Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
